@@ -1,0 +1,64 @@
+﻿@model List<paginaInform.Models.empresaImagen>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    @{
+        ViewBag.Title = "Index";
+    }
+
+
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td><img id="@i.id_ImagenEmp" src="@i.urlImagenEmp" border="50" alt="20" /></td>
+            <td><p> pepe</td>
+        </tr>
+    }
+
+
+    <div class="modal fade" role="dialog" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Informacion</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="insertar" method="post">
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Nombre:</label>
+                            <input class="form-control" name="nombre" id="recipient-name">
+
+                            <label for="apellidos" class="control-label">Apellido:</label>
+                            <input class="form-control" name="apellidos" id="apellidos">
+
+                            <label for="telefono" class="control-label">Telefono:</label>
+                            <input class="form-control" name="telefono" id="telefono">
+
+                            <label for="correo" class="control-label">Correo:</label>
+                            <input class="form-control" name="correo" id="correo">
+
+                            <label for="message-text" class="control-label">Mensaje:</label>
+                            <textarea class="form-control" name="mensaje" id="message-text"></textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-primary">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Open modal for </button>
+</body>
+
+</html>
